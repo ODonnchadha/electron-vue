@@ -1,9 +1,8 @@
-## Electron: Building Cross Platform Desktop Apps
+- Electron: Building Cross Platform Desktop Apps
     - 1 hr 54 min
     - Intermediate
     - Released: 05/28/2019
     - Ray Villalobos
-
     - Linked-In Learning:
     - [URL](https://www.linkedin.com/learning/electron-building-cross-platform-desktop-apps-3/cross-platform-apps-with-electron)
     - [Repository](https://github.com/planetoftheweb/electron-4)
