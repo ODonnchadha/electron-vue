@@ -134,7 +134,7 @@
         npm i jquery
         npm i popper.js
     ```
-
+    - Snippet *before* my forced/hacked updates:
     ```html
         <template>
         <transition-group name="fade" tag="div" @beforeEnter="beforeEnter" @enter="enter" @leave="leave">
@@ -151,4 +151,11 @@
         <script>
         import Price from "./Price.vue";
         import VueRouter from "vue-router";
+
+        props: ["cart", "cartQty", "cartTotal"],
+        components: {
+            FontAwesomeIcon,
+            VueRouter,
+            Price
+        }
     ```

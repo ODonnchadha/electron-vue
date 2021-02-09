@@ -44,7 +44,6 @@
 
 <script>
 import Price from "./Price.vue";
-import VueRouter from "vue-router";
 
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -53,7 +52,6 @@ export default {
   props: ["cart", "cartQty", "cartTotal"],
   components: {
     FontAwesomeIcon,
-    VueRouter,
     Price
   }
 };
