@@ -1,30 +1,26 @@
 <template>
   <div>
-    <h1>My Shop</h1>
     <navbar :cart="cart" :cartQty="cartQty" :cartTotal="cartTotal"></navbar>
-    <price-slider :sliderStatus="sliderStatus" :maximum.sync="maximum"></price-slider>
-    <product-list :maximum="maximum" :products="products"></product-list>
+    <h2 class="text-center mt-0">Shop</h2>
+    <p>Share your love of technology while spreading good cheer with Binaryville's official merchandise.</p>
+    <product-list :modalPhoto="modalPhoto" :products="products"></product-list>
   </div>
 </template>
 <script>
 import Navbar from "./Navbar.vue";
-import PriceSlider from "./PriceSlider.vue";
 import ProductList from "./ProductList.vue";
 
 export default {
   name: "products",
   props: [
     "products",
-    "maximum",
     "cart",
     "cartQty",
     "cartTotal",
-    "sliderStatus",
-    "sliderState"
+    "modalPhoto"
   ],
   components: {
     Navbar,
-    PriceSlider,
     ProductList
   }
 };

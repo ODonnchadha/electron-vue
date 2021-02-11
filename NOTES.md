@@ -159,3 +159,15 @@
             Price
         }
     ```
+    - main.js is our Vue entry point. background.js is our Electron code.
+    - And how do we load things into an Electron project?
+        - The main.js lifecycle 'mounted' loads the product list from the web.
+        ```javascript
+        fetch("https://hplussport.com/api/products/order/price")
+        fetch("./inventory.json")
+        ```
+    - Electron is a 'browser' with a piece the runs from Node.js.
+        - Use the Node.js "require" statement for Electron builds.
+
+- Improving Our Application:
+    - 

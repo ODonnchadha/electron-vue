@@ -1,15 +1,15 @@
 <template>
   <div id="app" class="container mt-5">
+    <img class="img-fluid m-auto display-block" style="width: 300px" src="images/binaryville.svg" alt="Binaryville" />
     <router-view
       :cart="cart"
       :cartQty="cartQty"
       :cartTotal="cartTotal"
-      :sliderStatus="sliderStatus"
-      :maximum.sync="maximum"
       :products="products"
+      :modalPhoto="modalPhoto"
       @add="addItem"
       @delete="deleteItem"
-      @toggle="toggleSliderStatus"
+      @setCurrentPhoto="setCurrentPhoto"
     ></router-view>
   </div>
 </template>
@@ -19,10 +19,9 @@ export default {
   name: "app",
   data: function() {
     return {
-      maximum: 99,
-      sliderStatus: true,
       cart: [],
-      products: null
+      products: null,
+      modalPhoto: null
     };
   },
   computed: {
@@ -42,10 +41,11 @@ export default {
     }
   },
   methods: {
-    toggleSliderStatus: function() {
-      this.sliderStatus = !this.sliderStatus;
+    setCurrentPhoto: function(item) {
+      this.modalPhoto = item.replace("_tn", "");
+      console.log('this.modalPhoto ', this.modalPhoto);
     },
-    deleteItem: function(id) {
+    deleteItem: function(id) { 
       if (this.cart[id].qty > 1) {
         this.cart[id].qty--;
       } else {
@@ -71,11 +71,13 @@ export default {
     }
   },
   mounted: function() {
-    fetch("https://hplussport.com/api/products/order/price")
-      .then(response => response.json())
-      .then(data => {
-        this.products = data;
-      });
+    const data = require("./inventory.json");
+    this.products = data;
+    // fetch("https://hplussport.com/api/products/order/price")
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     this.products = data;
+    //   });
   }
 };
 </script>
