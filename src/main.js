@@ -7,6 +7,8 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 
 import "bootstrap/dist/css/bootstrap.css";
 import "animate.css/animate.css";
+// import { ipcRenderer } from "electron";
+// const { ipcRenderer } = require("electron");
 
 import {
   faShoppingCart,
@@ -33,6 +35,13 @@ const router = new VueRouter({
     }
   ]
 });
+
+// ipcRenderer.on("checkout", () => {
+//   router.push("/checkout");
+// });
+// ipcRenderer.on("shop", () => {
+//   router.push("/");
+// });
 
 new Vue({
   render: h => h(App),

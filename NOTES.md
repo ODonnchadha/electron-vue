@@ -170,4 +170,5 @@
         - Use the Node.js "require" statement for Electron builds.
 
 - Improving Our Application:
-    - 
+
+- Creating Menus:
